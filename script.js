@@ -6,9 +6,24 @@ function from button’s onclick event.*/
 const textInput = document.getElementById('“inputName”');
 const el = document.getElementById('text1');
 
-function printInput() {
-    el.textContent = el.textContent + ', ' + textInput.value + '!';
+function isNumber(x) {
+    if (x === "") {
+        return false;
+    }
+    const numX = +x;
+    if (isNaN(numX)) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
+function printInput() {
+    if (isNumber(textInput.value)) {
+        el.textContent = 'Hello , ' + textInput.value + '!';
+    } else {
+        alert('It is NaN!')
+    }
 }
 
 /*
@@ -22,9 +37,9 @@ const equal = document.getElementById('equal');
 
 function equalPassword() {
     if (pass1.value === pass2.value) {
-        equal.textContent = equal.textContent;
+        equal.textContent = "Equal";
     } else {
-        equal.textContent = 'No ' + equal.textContent;
+        equal.textContent = "Not equal";
     }
 }
 
