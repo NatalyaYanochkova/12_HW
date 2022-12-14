@@ -54,5 +54,5 @@ const random = document.getElementById('random');
 
 function randomToSpan() {
 
-    random.textContent = Math.random();
+    random.textContent = `Number - ${Math.random()}`;
 }
